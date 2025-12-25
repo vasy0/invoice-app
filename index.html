@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-file-invoice-dollar"></i> Инвойс Система</h1>
+            <p>Управление счетами и квитанциями</p>
+        </header>
+
+        <div class="app-container">
+            <div class="invoice-form">
+                <h2><i class="fas fa-plus-circle"></i> Создать инвойс</h2>
+                <div class="form-group">
+                    <label for="clientName"><i class="fas fa-user"></i> Имя клиента:</label>
+                    <input type="text" id="clientName" placeholder="Введите имя клиента">
+                </div>
+                <div class="form-group">
+                    <label for="amount"><i class="fas fa-money-bill-wave"></i> Сумма ($):</label>
+                    <input type="number" id="amount" placeholder="Введите сумму" min="0" step="0.01">
+                </div>
+                <div class="form-group">
+                    <label for="description"><i class="fas fa-sticky-note"></i> Описание:</label>
+                    <textarea id="description" placeholder="Описание услуги или товара"></textarea>
+                </div>
+                <button id="addInvoice" class="btn-primary">
+                    <i class="fas fa-save"></i> Добавить инвойс
+                </button>
+            </div>
+
+            <div class="invoices-list">
+                <h2><i class="fas fa-list"></i> Список инвойсов</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3 id="totalInvoices">0</h3>
+                        <p>Всего инвойсов</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="totalAmount">$0.00</h3>
+                        <p>Общая сумма</p>
+                    </div>
+                </div>
+                <div id="invoicesContainer">
+                    <!-- Инвойсы будут добавляться здесь -->
+                    <p class="empty-message">Нет созданных инвойсов. Добавьте первый!</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Invoice App v1.0 | Развернуто с использованием Docker & GitHub Actions</p>
+            <div class="tech-stack">
+                <span><i class="fab fa-docker"></i> Docker</span>
+                <span><i class="fab fa-github"></i> GitHub Actions</span>
+                <span><i class="fas fa-cloud"></i> Render</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
